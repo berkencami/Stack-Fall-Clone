@@ -178,6 +178,7 @@ public class Player : MonoBehaviour
                     transform.GetChild(0).gameObject.SetActive(false);
                     ScoreManager.Instance.ResetScore();
                     SoundManager.Instance.PlaySound(deadClip, 0.5f);
+                    PlayerPrefs.SetInt("Level",0);
                 }
             }
         }
