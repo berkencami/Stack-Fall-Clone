@@ -2,7 +2,7 @@
 StackFall Clone with Unity
 
 # Gameplay Video
-[Youtube] (https://www.youtube.com/watch?v=3yv7D_i5eZg&ab_channel=Berk)
+[Youtube] (https://youtu.be/iETAYhiJBv8)
 
 # ScreenShots
 ![ScreenShot](https://github.com/BerkEncami/Stack-Fall-Clone/blob/main/ScreenShots/1.png)
