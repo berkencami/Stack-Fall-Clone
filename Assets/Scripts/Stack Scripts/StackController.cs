@@ -5,7 +5,7 @@ using UnityEngine;
 public class StackController : MonoBehaviour
 {
     [SerializeField]
-    private StackPartController[] stackPartControllers = null;
+    private StackPartController[] stackPartControlls = null;
 
     public void ShatterAllParts()
     {
@@ -13,15 +13,13 @@ public class StackController : MonoBehaviour
         {
             transform.parent = null;
             FindObjectOfType<Player>().IncreaseBrokenStacks();
-            
         }
 
-        foreach (StackPartController o in stackPartControllers)
+        foreach (StackPartController o in stackPartControlls)
         {
             o.Shatter();
         }
         StartCoroutine(RemoveParts());
-
 
     }
 
@@ -29,6 +27,5 @@ public class StackController : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
-
     }
 }

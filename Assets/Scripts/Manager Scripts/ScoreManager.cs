@@ -5,35 +5,42 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
-    public int score = 0;
-    public Text scoreText;
+    public static ScoreManager instance;
 
-    
+    private Text scoreText;
+
+    public int score = 10;
+
     void Awake()
     {
-        scoreText = GameObject.Find("Score").GetComponent<Text>();
-        if (Instance != null)
-            Destroy(gameObject);
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+        MakeSingleton();
     }
+
     void Start()
     {
-        AddScore(0);
+        AddScore(0);    
     }
-    void Update()
+
+    private void Update()
     {
         if(scoreText == null)
         {
-            scoreText = GameObject.Find("Score").GetComponent<Text>();
+            scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
             scoreText.text = score.ToString();
         }
     }
 
+    void MakeSingleton()
+    {
+        if (instance != null)
+            Destroy(gameObject);
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     public void AddScore(int amount)
     {
@@ -42,9 +49,8 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", score);
 
         scoreText.text = score.ToString();
-
-
     }
+
     public void ResetScore()
     {
         score = 0;
