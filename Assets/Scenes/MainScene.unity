@@ -253,8 +253,7 @@ MonoBehaviour:
   invicnbleObj: {fileID: 278603423}
   invincibleFill: {fileID: 741164778}
   fireEffect: {fileID: 195591383}
-  winEffect: {fileID: 421167128562123445, guid: 78b10f4e42074744ea3a4c883777e1bf,
-    type: 3}
+  winEffect: {fileID: 129898, guid: 36bdc02b23d9ca94d93bd715c0cca5c0, type: 3}
   splashEffect: {fileID: 1811373762065970017, guid: 0a05de5742d4264418255ad0caf2f85e,
     type: 3}
   playerState: 0
